@@ -9,7 +9,7 @@
 .textarea {
     font-size: 1em;
     resize: none;
-    width: 80vw;
+    width: 60vw;
     height: 1em;
     padding: .5em 1em;
     outline: none;
@@ -30,6 +30,8 @@
 .button:hover {
     background-color: #dde0e3;
     color: #0066cc;
+    outline: .05em solid #0066cc;
+
 }
 
 .button:active {
