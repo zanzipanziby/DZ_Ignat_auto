@@ -1,10 +1,21 @@
 .App {
+
+    display: flex;
+    justify-content: center;
     --header_height: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
 }
 
 .hw {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 2em;
+    width: 90vw;
 
 }
+
 
 .hwTitle {
 

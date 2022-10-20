@@ -3,29 +3,46 @@
 }
 
 .friendImageAndText {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: end;
 
 }
 
 .friendImageAndText img {
-
+    height: 2.5em;
+    margin-left: 1em;
 }
 
 .friendText {
-
+    position: relative;
+    padding: .5em 1em;
+    background-color: #0066CC;
+    color: #FFFFFF;
+    border-radius: 10px 10px 0 10px;
+    max-width: 50vw;
 }
 
 .friendText:after {
-
+    content: '◣';
+    position: absolute;
+    color: #0066CC;
+    right: -.5em;
+    bottom: -.32em;
 }
 
 .friendName {
-
+    font-weight: 600;
 }
 
 .friendMessageText {
-
+    font-family: 'Montserrat', sans-serif;
+    white-space: pre-wrap;
 }
 
 .friendTime {
-
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: .5em;
+    margin-right: 1em;
 }
