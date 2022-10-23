@@ -1,6 +1,7 @@
 
 .App {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     --header_height: 60px;
     font-family: 'Montserrat', sans-serif;
@@ -10,10 +11,10 @@
 }
 
 .hw {
+    margin: 2em auto;
     display: flex;
     flex-direction: column;
     height: 100%;
-    margin-top: 2em;
     width: 70vw;
 
 }
