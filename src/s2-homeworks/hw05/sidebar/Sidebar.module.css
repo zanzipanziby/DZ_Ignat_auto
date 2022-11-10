@@ -1,9 +1,9 @@
 .sidebar {
+    position: absolute;
     justify-content: space-between;
     align-items: flex-start;
     display: flex;
     top: 0;
-    position: fixed;
     width: 25vw;
     height: 100vh;
     transform: translate(-110%);
@@ -18,8 +18,8 @@
 }
 
 .background {
+    position: absolute;
     top: 0;
-    position: fixed;
     height: 100vh;
     width: 100vw;
     background-color: rgba(33, 42, 52, 0.55);
