@@ -5,6 +5,7 @@ import axios from 'axios'
 import SuperPagination from './common/c9-SuperPagination/SuperPagination'
 import {useSearchParams} from 'react-router-dom'
 import SuperSort from './common/c10-SuperSort/SuperSort'
+import {Console} from "inspector";
 
 /*
 * 1 - дописать SuperPagination
@@ -22,7 +23,7 @@ type TechType = {
 }
 
 type ParamsType = {
-    sort: string
+    sort?: string
     page: number
     count: number
 }
@@ -41,7 +42,7 @@ const getTechs = (params: ParamsType) => {
 const HW15 = () => {
     const [sort, setSort] = useState('')
     const [page, setPage] = useState(1)
-    const [count, setCount] = useState(4)
+    const [count, setCount] = useState(7)
     const [idLoading, setLoading] = useState(false)
     const [totalCount, setTotalCount] = useState(100)
     const [searchParams, setSearchParams] = useSearchParams()
@@ -52,7 +53,10 @@ const HW15 = () => {
         getTechs(params)
             .then((res) => {
                 // делает студент
-
+                if(res) {
+                    setTechs(res.data.techs)
+                    setTotalCount(res.data.totalCount)
+                }
                 // сохранить пришедшие данные
 
                 //
@@ -60,24 +64,34 @@ const HW15 = () => {
     }
 
     const onChangePagination = (newPage: number, newCount: number) => {
+        console.log(newCount)
         // делает студент
 
         // setPage(
+        setPage(newPage)
         // setCount(
-
+        setCount(newCount)
         // sendQuery(
-        // setSearchParams(
+        sendQuery({page:newPage, count:newCount, sort})
+        // setSearchParams(\
+        setSearchParams({page:newPage.toString(), count:newCount.toString(), sort})
 
         //
+
     }
 
     const onChangeSort = (newSort: string) => {
         // делает студент
 
         // setSort(
+        setSort(newSort)
+        setPage(1)
         // setPage(1) // при сортировке сбрасывать на 1 страницу
-
+        sendQuery({page:1, count: count, sort:newSort})
         // sendQuery(
+
+        setSearchParams({page:'1', count:count.toString(), sort})
+
         // setSearchParams(
 
         //
@@ -114,16 +128,17 @@ const HW15 = () => {
                     itemsCountForPage={count}
                     totalCount={totalCount}
                     onChange={onChangePagination}
+
                 />
 
                 <div className={s.rowHeader}>
                     <div className={s.techHeader}>
-                        tech
+                        <span>Tech</span>
                         <SuperSort sort={sort} value={'tech'} onChange={onChangeSort}/>
                     </div>
 
                     <div className={s.developerHeader}>
-                        developer
+                        <span>Developer</span>
                         <SuperSort sort={sort} value={'developer'} onChange={onChangeSort}/>
                     </div>
                 </div>
