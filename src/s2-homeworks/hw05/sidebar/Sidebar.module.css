@@ -4,9 +4,9 @@
     align-items: flex-start;
     display: flex;
     top: 0;
-    width: 25vw;
+    min-width: 25vw;
     height: 100vh;
-    transform: translate(-110%);
+    transform: translate(-250%);
     background-color: #FFFFFF;
     box-shadow: 2px 2px 5px #212A34;
     z-index: 3;
